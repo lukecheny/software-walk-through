@@ -23,38 +23,49 @@
 ## Source-code Walk-through Checklist
 
 ### Data Reference Errors
-- [ ] Are any containers accessed outside their bounds?
+- [X] Are any containers accessed outside their bounds?
+    - There are containers, but everything is within their proper bounds.
 - [ ] Are all references through a pointer variable currently allocated?
 
 ### Computation Errors
-- [ ] Is there any use of integer division with floating point devision is required?
+- [X] Is there any use of integer division with floating point devision is required?
+    - No division present.
 - [ ] Is there a possibility of overflow or underflow during computation?
-- [ ] Is there a possibility of a divide by zero?
-- [ ] Are the order of operations in computations assumed correctly?
+- [X] Is there a possibility of a divide by zero?
+    - No division present.
+- [X] Are the order of operations in computations assumed correctly?
+    - No computations beside incrementing variables.
 
 ### Comparison Errors
 - [X] Are any = operator used when == is needed?
 - [ ] Are comparison operators correct?
 - [ ] Are boolean operators and the operands they are used on correct?
-- [ ] Are comparisons to floating point numbers handled correctly?
+- [X] Are comparisons to floating point numbers handled correctly?
+    - No floating point numbers present.
 
 ### Control-Flow Errors
 - [X] All loops/recursive will terminate?
-- [ ] Are there any off-by-one errors?
+    - All loops/recursion terminates. The while loop in srcSAXSingleEventDispatcher.hpp could be problematic if setDispatched() function fails.
+- [X] Are there any off-by-one errors?
 - [X] Are no do-while-statements used?
+- "for(event : events)" contains an unknown operator, could produce unexpected errors.
 
 ### Function Errors
 - [X] Are all arguments passed in the correct order?
-- [ ] Are all by-value parameters never modified?
+    - There are no arguments passed in the implementation file (srcSAXEventDispatcher.cpp).
+- [X] Are all by-value parameters never modified?
 
 ### I/O Errors
 - [X] Are all inputs to the system validated?
+    - No input data sent to the system from the implementation file (srcSAXEventDispatcher.cpp).
 - [X] Are all opened files are closed?
+    - No files are opened in the project.
 - [X] Are end-of-file conditions handled correctly?
+    - No files are opened in the project.
 - [ ] Are I/O error conditions handled correctly?
 
 ### Other Errors
 - [ ] Are all constant literals assigned a constant variable?
 - [ ] Are returned error codes/states checked and handled correctly?
-- [ ] Are all exceptions caught and handled correctly?
-- [X] Are there no uses of using namespace std;
+- [X] Are all exceptions caught and handled correctly?
+- [X] Are there no uses of using namespace std?
