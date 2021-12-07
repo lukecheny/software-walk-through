@@ -25,12 +25,13 @@
 ### Data Reference Errors
 - [X] Are any containers accessed outside their bounds?
     - There are containers, but everything is within their proper bounds.
-- [ ] Are all references through a pointer variable currently allocated?
+- [X] Are all references through a pointer variable currently allocated?
 
 ### Computation Errors
 - [X] Is there any use of integer division with floating point devision is required?
     - No division present.
-- [ ] Is there a possibility of overflow or underflow during computation?
+- [X] Is there a possibility of overflow or underflow during computation?
+    - An integer is added to a character reference which could cause underflow or overflow.
 - [X] Is there a possibility of a divide by zero?
     - No division present.
 - [X] Are the order of operations in computations assumed correctly?
@@ -38,8 +39,8 @@
 
 ### Comparison Errors
 - [X] Are any = operator used when == is needed?
-- [ ] Are comparison operators correct?
-- [ ] Are boolean operators and the operands they are used on correct?
+- [X] Are comparison operators correct?
+- [X] Are boolean operators and the operands they are used on correct?
 - [X] Are comparisons to floating point numbers handled correctly?
     - No floating point numbers present.
 
