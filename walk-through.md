@@ -58,7 +58,7 @@
 
 ### I/O Errors
 - [X] Are all inputs to the system validated?
-    - No input data sent to the system from the implementation file (srcSAXEventDispatcher.cpp).
+    - No input data sent to the system from the implementation file (srcSAXEventDispatcher.cpp). However, parameters for methods are not validated.
 - [X] Are all opened files are closed?
     - No files are opened in the project.
 - [X] Are end-of-file conditions handled correctly?
@@ -66,7 +66,7 @@
 - [ ] Are I/O error conditions handled correctly?
 
 ### Other Errors
-- [ ] Are all constant literals assigned a constant variable?
-- [ ] Are returned error codes/states checked and handled correctly?
+- [X] Are all constant literals assigned a constant variable?
+- [X] Are returned error codes/states checked and handled correctly?
 - [X] Are all exceptions caught and handled correctly?
 - [X] Are there no uses of using namespace std?
