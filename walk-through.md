@@ -14,27 +14,39 @@
     - Could be misunderstanding the use of these methods in the software at a larger scope, but in our small scope of the dispatcher folder it seems incorrect.
 - Overflow or underflow possible with an integer added to a character reference.
     - Possible overflow at line 145 in srcSAXEventDispatchUtilities.hpp.
+- Constructor on lines 540-548 in srcSAXEventDispatcher.hpp causes faults, but error is unknown.
+- Destructor on lines 549-556 in srcSAXEventDispatcher.hpp causes faults, but error is unknown.
 
 ## Inconsistencies
-- srcSAXEventDispatcher, line 119
+- srcSAXEventDispatcher.hpp, line 119
   - Missing space after closing parenthesis and before starting curly brace in some places.
-- srcSAXEventDispatcher, line 938-955
+- srcSAXEventDispatcher.hpp, line 938-955
     - Use of ternary operator instead of if/else as used in other areas of the code.
-- srcSAXEventDispatcher, line 973-977
+- srcSAXEventDispatcher.hpp, line 973-977
     - If statements that could be written in one line are written in both one line and multiple lines with curly braces.
+- Styling inconsistency in the code. Camel case is mostly used, but there are instances when it is not.
+    - In srcSAXEventDispatcher.hpp on line 73 the boolean values are not camel case.
+    - In srcSAXEventDispatcher.hpp on line 72 underscores are used for the values instead of camel case.
 
 ## Requirements Violations
-- srcSAXEventDispatcher, line 22
+- srcSAXEventDispatcher.hpp, line 22
     - Too much overhead from include statements.
-- srcSAXEventDispatcher, example line 980
+- srcSAXEventDispatcher.hpp, example line 980
     - Methods not documented properly, hard to tell what they do. Violated the "Easy to use framework to execute components" requirement.
 
 ## Possible Improvements
-- srcSAXEventDispatchUtilities, line 250
+- srcSAXEventDispatchUtilities.hpp, line 250
     - Add some more error handling instead of throwing a "something went wrong".
 - Fixing style inconsistencies such as adding between parenthesis and curly braces.
 - Convert identical if/else statements into a function for reuse (DRY principle).
     - For example: lines 964 and 973.
+- Delete unneccesary comments.
+    - In srcSAXEventDispatcher.hpp on line 312.
+- Add comments to the software to explain what exactly is going on.
+    - Comments are used for some more complex functions, but their use is not frequent.
+- More error handling should be implemented, there is not much here.
+- Remove comments of deprecated code.
+    - For example: in srcSAXEventDispatcher.hpp on lines 849-857.
 
 ## Source-code Walk-through Checklist
 
