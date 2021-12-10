@@ -9,7 +9,11 @@
 * Jaxsin Power - Team Member
 
 ## Faults
-
+- Nand and Nor are defined identically, though they should have different functionality.
+    - Lines 157-163 (Nand) and lines 171-177 (Nor) in srcSAXEventDispatchUtilities.hpp.
+    - Could be misunderstanding the use of these methods in the software at a larger scope, but in our small scope of the dispatcher folder it seems incorrect.
+- Overflow or underflow possible with an integer added to a character reference.
+    - Possible overflow at line 145 in srcSAXEventDispatchUtilities.hpp.
 
 ## Inconsistencies
 - srcSAXEventDispatcher, line 119
@@ -29,6 +33,8 @@
 - srcSAXEventDispatchUtilities, line 250
     - Add some more error handling instead of throwing a "something went wrong".
 - Fixing style inconsistencies such as adding between parenthesis and curly braces.
+- Convert identical if/else statements into a function for reuse (DRY principle).
+    - For example: lines 964 and 973.
 
 ## Source-code Walk-through Checklist
 
