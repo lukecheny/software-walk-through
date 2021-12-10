@@ -27,6 +27,8 @@
 - Styling inconsistency in the code. Camel case is mostly used, but there are instances when it is not.
     - In srcSAXEventDispatcher.hpp on line 73 the boolean values are not camel case.
     - In srcSAXEventDispatcher.hpp on line 72 underscores are used for the values instead of camel case.
+- Naming inconsistency for classes with some beginning with lower case and other beginning with upper case.
+    - For example: in srcSAXEventDispatcher.hpp on line 67.
 
 ## Requirements Violations
 - srcSAXEventDispatcher.hpp, line 22
