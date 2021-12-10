@@ -12,13 +12,23 @@
 
 
 ## Inconsistencies
-
+- srcSAXEventDispatcher, line 119
+  - Missing space after closing parenthesis and before starting curly brace in some places.
+- srcSAXEventDispatcher, line 938-955
+    - Use of ternary operator instead of if/else as used in other areas of the code.
+- srcSAXEventDispatcher, line 973-977
+    - If statements that could be written in one line are written in both one line and multiple lines with curly braces.
 
 ## Requirements Violations
-
+- srcSAXEventDispatcher, line 22
+    - Too much overhead from include statements.
+- srcSAXEventDispatcher, example line 980
+    - Methods not documented properly, hard to tell what they do. Violated the "Easy to use framework to execute components" requirement.
 
 ## Possible Improvements
-
+- srcSAXEventDispatchUtilities, line 250
+    - Add some more error handling instead of throwing a "something went wrong".
+- Fixing style inconsistencies such as adding between parenthesis and curly braces.
 
 ## Source-code Walk-through Checklist
 
@@ -63,7 +73,7 @@
     - No files are opened in the project.
 - [X] Are end-of-file conditions handled correctly?
     - No files are opened in the project.
-- [ ] Are I/O error conditions handled correctly?
+- [X] Are I/O error conditions handled correctly?
 
 ### Other Errors
 - [X] Are all constant literals assigned a constant variable?
